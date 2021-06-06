@@ -3,18 +3,21 @@ import PropTypes from "prop-types";
 import '../../index.css';
 import FriendListItem from './FriendListItem';
 import defaultImage from "../../components/default.jpg";
+import friendsStyles from "../friends/Friends.module.css";
 
 const FriendList = (({ friends }) => (
 	
-	<ul class="friend-list">
+	<ul className={friendsStyles.friend__list}>
 		{friends.map(({ avatar, name, isOnline, id }) => (
-			<li key={id}>
-				<FriendListItem
-					avatar={avatar}
-					name={name}
-					isOnline={isOnline}
+			
+			<FriendListItem
+				key={id}
+				avatar={avatar}
+				name={name}
+				isOnline={isOnline}
+				id={id}
 				/>
-			</li>
+			
 	
 		))}
 </ul>

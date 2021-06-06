@@ -2,35 +2,36 @@ import React from 'react';
 import PropTypes from "prop-types";
 // import user from './user.json';
 import defaultImage from "../../components/default.jpg";
+import profileStyles from '../profile/Profile.module.css';
 import '../../index.css';
 
 
 
 const Profile = ({ name, tag, location, avatar, stats}) => (
-	<div class="profile">
-  <div class="description">
+	<div className={profileStyles.profile}>
+  <div className={profileStyles.description}>
     <img
       src={avatar}
       alt="Аватар пользователя"
-      class="avatar"
+      className={profileStyles.avatar}
     />
-    <p class="name">{name}</p>
-    <p class="tag">{tag}</p>
-    <p class="location">{location}</p>
+    <p className={profileStyles.name}>{name}</p>
+    <p className={profileStyles.tag}>{tag}</p>
+    <p className={profileStyles.location}>{location}</p>
   </div>
 
-  <ul class="stats">
-    <li>
-      <span class="label">Followers</span>
-      <span class="quantity">{stats.followers}</span>
+  <ul className={profileStyles.stats}>
+    <li className={profileStyles.item}>
+      <span className={profileStyles.label}>Followers</span>
+      <span className={profileStyles.quantity}>{stats.followers}</span>
     </li>
-    <li>
-      <span class="label">Views</span>
-      <span class="quantity">{stats.views}</span>
+    <li className={profileStyles.item}>
+      <span className={profileStyles.label}>Views</span>
+      <span className={profileStyles.quantity}>{stats.views}</span>
     </li>
-    <li>
-      <span class="label">Likes</span>
-      <span class="quantity">{stats.likes}</span>
+    <li className={profileStyles.item}>
+      <span className={profileStyles.label}>Likes</span>
+      <span className={profileStyles.quantity}>{stats.likes}</span>
     </li>
   </ul>
 </div>

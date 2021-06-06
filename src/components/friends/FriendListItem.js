@@ -2,13 +2,20 @@ import React from 'react';
 import PropTypes from "prop-types";
 import '../../index.css';
 import defaultImage from "../../components/default.jpg";
+import friendsStyles from "../friends/Friends.module.css";
+
 
 const FriendListItem = (({ avatar, name, isOnline, id }) => (
 	
-	<li class="item" key={id}>
-		<span class="status">{isOnline}</span>
-  		<img class="avatar" src={avatar} alt={name} width="48" />
-		<p class="name">{name}</p>
+	<li className={friendsStyles.item} key={id}>
+		{isOnline === true ? (
+			<span className={friendsStyles.status__online}>{isOnline}</span>
+		) : (
+			<span className={friendsStyles.status__offline}>{isOnline}</span>
+		)}
+		
+  		<img className={friendsStyles.avatar} src={avatar} alt={name} width="48" />
+		<p className={friendsStyles.name}>{name}</p>
 	</li>
 ));
 
